@@ -14,8 +14,15 @@ function setNewlocalStorage(data) {
 	localStorage.setItem('Posts', JSON.stringify(data.Posts))
 }
 
+let lastItem
+
 function clickt(item) {
-	console.log(item)
-	document.getElementById(item)
-	console.log(document.getElementById(item))
+	console.log(lastItem )
+	if (lastItem) {
+		document.getElementById(lastItem).classList = ""
+	} 
+	
+	document.getElementById(item).classList = "current"	
+	
+	lastItem = item
 }

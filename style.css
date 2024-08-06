@@ -67,32 +67,80 @@ main {
 }
 
 .nav {
+    width: 100%;
+    max-width: 928px;
+    display: flex;
     overflow: hidden;
+
+    button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50rem;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
 
     ul {
         justify-content: unset;
-        margin-block-start: 0;
+        margin-block-start: 0; 
         list-style-type: none;
         margin-block-end: 0;
         padding: 0;
-
-
+        overflow-x: scroll;
+        scrollbar-width: none;
+        gap: 8px;
+        cursor: default;
+        scroll-direction: horizontal;
     
         li { 
             text-wrap: nowrap;
+            padding: 5px 12px;
+            border: 1px solid transparent;
+            border-radius: 50rem;
+            cursor: pointer;
         }
 
         li:hover {
             background-color: #f5f4f4;
+            border: 1px solid #f5f4f4;
+            border-radius: 50rem;
+
         }
 
         li:active {
             background-color: #e0e0e0;
+            border: 1px solid #e0e0e0;
+            border-radius: 50rem;
+
         }
 
         .current {
             background-color: black;
+            color: white;
+            border: 1px solid black;
+            border-radius: 50rem;
+
         }
+
+        .current:hover {
+            background-color: #373f41;
+            border: 1px solid #373f41;
+            border-radius: 50rem;
+
+        }
+
+        .current:active {
+            background-color: #525859;
+            border: 1px solid #525859;
+            border-radius: 50rem;
+        }
+    }
+
+    ul::-webkit-scrollbar {
+        display: none;
     }
 }
 
