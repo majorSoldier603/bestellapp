@@ -1,0 +1,740 @@
+{
+    "0":[
+        {
+            "img": "",
+            "name": "Beliebt ❤️",
+            "comment": ""
+        },
+        {
+            "name": "Pizza Margherita (vegetarisch)",
+            "description": "mit Basilikum",
+            "price": "8.40"
+        },
+        {
+            "name": "Crema di mascarpone e ciabatta",
+            "description": "hausgemachter Mascarpone-Dip mit Knoblauch und frischen Kräutern, dazu frisch gebackenes Ciabatta-Brot",
+            "price": "4.90"
+        },
+        {
+            "name": "Bruschetta (vegan)",
+            "description": "geröstete Ciabatta-Scheiben mit Strauchtomaten, roten Zwiebeln, Basilikum, Olivenöl und Balsamico-Creme",
+            "price": "5.90"
+        }
+    ],
+    "1": [
+        {
+            "img": "./img/baguette_bruschetta.png",
+            "name": "Antipasti - Vorspeisen",
+            "comment": ""
+        },
+        {
+            "name": "Bruschetta (vegan)",
+            "description": "geröstete Ciabatta-Scheiben mit Strauchtomaten, roten Zwiebeln, Basilikum, Olivenöl und Balsamico-Creme",
+            "price": "5.90"
+        },
+        {
+            "name": "Crema di mascarpone e ciabatta",
+            "description": "hausgemachter Mascarpone-Dip mit Knoblauch und frischen Kräutern, dazu frisch gebackenes Ciabatta-Brot",
+            "price": "4.90"
+        },
+        {
+            "name": "Spinaci al Forno",
+            "description": "mit frischem Blattspinat, Knoblauch, Mozzarella und Sahne, überbacken mit Parmesan",
+            "price": "8.50"
+        },
+        {
+            "name": "Antipasto piccolo (vegan)",
+            "description": "mit getrockneten Tomaten, gemischten Oliven und Artischocken",
+            "price": "7.00"
+        },
+        {
+            "name": "Gamberi aglio, olio e peperoncino",
+            "description": "mit Black Tiger Gambas in Olivenöl, Knoblauch und Kräutern, dazu geröstetes Ciabatta mit Mascarpone-Creme",
+            "price": "12.90"
+        },
+        {
+            "name": "Antipasto La Fiamma (scharf)",
+            "description": "Vorspeisenvariation mit Melonen und Parmaschinken, Salami, getrockneten Tomaten, Auberginen, Zucchini, Champignons, Paprika, Artischocken, Kirschtomaten mit Mozzarella-Perlen und Oliven",
+            "price": "13.90"
+        },
+        {
+            "name": "Carpaccio di manzo con rucola",
+            "description": "mit hauchdünnen Rinderfiletscheiben, Zitronen-Vinaigrette, Rucola und Parmesan",
+            "price": "11.90"
+        },
+        {
+            "name": "Vitello tonnato",
+            "description": "Scheiben vom gekochtem Kalbfleisch in Thunfisch-Kapern-Sardellensauce",
+            "price": "11.90"
+        },
+        {
+            "name": "Crema di pomodoro",
+            "description": "Tomatencremesuppe mit frischem Basilikum",
+            "price": "5.90"
+        },
+        {
+            "name": "Minestrone (vegan)",
+            "description": "mit getrockneten Tomaten, gemischten Oliven und Artischocken",
+            "price": "6.90"
+        }
+    ],
+    "2": [
+        {
+            "img": "./img/salat_salat.png",
+            "name": "Insalate",
+            "comment": "Alle Salate werden mit einem hausgemachten Dressing nach Wahl serviert."
+        },        
+        {
+            "name": "Insalata mista (vegan)",
+            "description": "Blattsalat mit Kirschtomaten, frischen Champignons, Paprika, frischem Fenchel, roten Zwiebeln, Mais und Gurken",
+            "price": "7.00"
+        },
+        {
+            "name": "Insalata di pomodorini (vegan)",
+            "description": "mit Kirschtomaten, roten Zwiebeln, Basilikum und Oregano8.00",
+            "price": "8.00"
+        },
+        {
+            "name": "Insalata con funghi trifolati (vegan)",
+            "description": "gemischter Salat mit gebratenen Champignons und Zwiebeln",
+            "price": "9.00"
+        },
+        {
+            "name": "Insalata rucola e parmigiano",
+            "description": "mit Rucola, Kirschtomaten und frischem Parmesan",
+            "price": "9.00"
+        },
+        {
+            "name": "Insalata rio mare",
+            "description": "gemischter Salat mit Ei, Oliven und einer Dose Premium-Thunfisch von Rio Mare",
+            "price": "11.40"
+        },
+        {
+            "name": "Insalata Italiana",
+            "description": "mit Rucola, Parmaschinken, Büffel-Mozzarella und Kirschtomaten",
+            "price": "12.40"
+        },
+        {
+            "name": "Insalata con pollo (scharf)",
+            "description": "gemischter Salat mit gebratenen Hähnchenbruststreifen und Sweet-Chilisauce",
+            "price": "10.00"
+        },
+        {
+            "name": "Caprese di bufala",
+            "description": "mit Strauchtomaten, Büffel-Mozzarella und Basilikum",
+            "price": "11.00"
+        },
+        {
+            "name": "Insalata di mare",
+            "description": "hausgemachter, frischer Meeresfrüchtesalat",
+            "price": "12.40"
+        },
+        {
+            "name": "Insalata La Fiamma",
+            "description": "mit Rucola, gebratenen, argentinischen Rinderfiletspitzen, Champignons und Kirschtomaten",
+            "price": "12.40"
+        },
+        {
+            "name": "Insalata con salmone",
+            "description": "gemischter Salat mit gebratenen Filetstreifen vom norwegischen Lachs",
+            "price": "13.40"
+        },
+        {
+            "name": "Insalata di gamberi",
+            "description": "gemischter Salat mit gebratenen Black Tiger Gambas",
+            "price": "13.40"
+        }
+    ],
+    "3": [
+        {
+            "img": "./img/pizza_fisch.png",
+            "name": "Pizza",
+            "comment": "Ø 32cm Alle Pizzen werden mit hausgemachter Tomatensalsa und frischem Mozzarella zubereitet und im Steinofen gebacken."
+        },        
+        {
+            "name": "Pizza Margherita (vegetarisch)",
+            "description": "mit Basilikum",
+            "price": "8.40"
+        },
+        {
+            "name": "Pizza Funghi (vegetarisch)",
+            "description": "mit frischen Champignons und Oregano",
+            "price": "9.40"
+        },
+        {
+            "name": "Pizza Napoli",
+            "description": "mit Sardellen, Oliven, Kapern und Oregano",
+            "price": "10.40"
+        },
+        {
+            "name": "Pizza Diavola (scharf, vegetarisch)",
+            "description": "mit roten Zwiebeln, Knoblauch, Chili und Oregano",
+            "price": "9.40"
+        },
+        {
+            "name": "Pizza Salame",
+            "description": "mit Salami Felino und Oregano",
+            "price": "10.00"
+        },
+        {
+            "name": "Pizza Prosciutto",
+            "description": "mit gekochtem, italienischen Schinken und Oregano",
+            "price": "10.00"
+        },
+        {
+            "name": "Pizza Tonno e Cipolla",
+            "description": "mit Thunfisch, roten Zwiebeln und Oregano",
+            "price": "11.40"
+        },
+        {
+            "name": "Pizza Spinaci (vegetarisch)",
+            "description": "mit frischem Blattspinat und Knoblauch",
+            "price": "9.40"
+        },
+        {
+            "name": "Pizza Vegetariana (vegetarisch)",
+            "description": "mit gegrillter Zucchini, Auberginen, Paprika und Zwiebeln",
+            "price": "11.40"
+        },
+        {
+            "name": "Pizza Rucola e Parmigiano",
+            "description": "mit Rucola und frischem Parmesan",
+            "price": "11.00"
+        },
+        {
+            "name": "Pizza Hawaii",
+            "description": "mit italienischem Kochschinken und frischen Ananasscheiben",
+            "price": "10.40"
+        },
+        {
+            "name": "Pizza Quattro Stagioni",
+            "description": "mit Thunfisch, Champignons, Paprika, Artischocken und Oregano",
+            "price": "11.40"
+        },
+        {
+            "name": "Pizza Caprese (vegetarisch)",
+            "description": "mit Kirschtomaten, Mozzarella-Perlen und Basilikum",
+            "price": "11.40"
+        },
+        {
+            "name": "Pizza La Fiamma (scharf)",
+            "description": "mit Black Tiger Gambas, Knoblauch, Chili und Petersilie",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Pescatore",
+            "description": "mit frischen Meeresfrüchten, Black Tiger Gambas und Knoblauch",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Calabrese (scharf)",
+            "description": "mit italienischer Salami, Kirschtomaten, Chili und Oregano",
+            "price": "12.00"
+        },
+        {
+            "name": "Pizza Parma con rucola e parmigiano",
+            "description": "mit Parmaschinken, Rucola und Parmesan",
+            "price": "14.00"
+        },
+        {
+            "name": "Pizza Quattro Formaggi",
+            "description": "mit Balkankäse, Gorgonzola, Mozzarella und Parmesan",
+            "price": "12.00"
+        },
+        {
+            "name": "Pizza Tirolese",
+            "description": "mit Tiroler Speck, Mascarpone, Kirschtomaten und Petersilie",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Hawaii",
+            "description": "mit italienischem Kochschinken und frischen Ananasscheiben",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Porcini (vegetarisch)",
+            "description": "mit Steinpilzen, Kirschtomaten und Petersilie",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Salmone e mascarpone",
+            "description": "mit Lachs, Mascarpone und Petersilie",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Gamberi mascarpone",
+            "description": "mit Black Tiger Gambas, Mascarpone und Kirschtomaten",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Pollo",
+            "description": "mit Hähnchenbruststreifen, Paprika, roten Zwiebeln und Champignons",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza San Daniele",
+            "description": "mit Parmaschinken, grünem Spargel und Kirschtomaten",
+            "price": "13.40"
+        },
+        {
+            "name": "Pizza Vitello Tonnato",
+            "description": "mit Scheiben vom gekochten Kalbfleisch in Thunfisch-Kapern-Sadellen-Sauce",
+            "price": "15.40"
+        },
+        {
+            "name": "Pizza Parma con rucola e Mozzarella di bufala",
+            "description": "mit Parmaschinken und frischem Rucola & Büffel-Mozzarella",
+            "price": "16.40"
+        }
+    ],
+    "4": [
+        {
+            "img": "./img/pasta_fusili.png",
+            "name": "Pasta",
+            "comment": ""
+        },  
+        {
+            "name": "Spaghetti Napoli (vegan)",
+            "description": "mit fruchtiger Tomaten-Basilikumsauce",
+            "price": "8.50"
+        },
+        {
+            "name": "Spaghetti aglio, olio e peperoncino (vegan, scharf)",
+            "description": "mit Olivenöl, Chili, Knoblauch und Petersilie",
+            "price": "8.50"
+        },
+        {
+            "name": "Spaghetti bolognese",
+            "description": "mit Fleischsauce und Schweine- und Rindfleisch",
+            "price": "9.50"
+        },
+        {
+            "name": "Spaghetti carbonara Sahne",
+            "description": "mit Tiroler Speck, Eigelb und Sahnesauce",
+            "price": "10.40"
+        },
+        {
+            "name": "Spaghetti carbonara italiano",
+            "description": "mit Tiroler Speck, Eigelb, und Parmesansauce",
+            "price": "11.40"
+        },
+        {
+            "name": "Spaghetti all'amatriciana",
+            "description": "mit Tiroler Speck, roten Zwiebeln, Tomatensauce und Petersilie",
+            "price": "11.40"
+        },
+        {
+            "name": "Spaghetti frutti di mare",
+            "description": "mit frischen Meeresfrüchten, Black Tiger Gambas und Knoblauch",
+            "price": "13.40"
+        },
+        {
+            "name": "Spaghetti La Fiamma (scharf)",
+            "description": "mit Black Tiger Gambas in Olivenöl, Lauchzwiebeln, Chili, Knoblauch und Kirschtomaten",
+            "price": "13.40"
+        },
+        {
+            "name": "Penne all'arabiata (vegan, scharf)",
+            "description": "mit Tomaten-Basilikumsauce",
+            "price": "9.40"
+        },
+        {
+            "name": "Penne al tonno",
+            "description": "mit Thunfisch, roten Zwiebeln und Tomatensauce",
+            "price": "11.40"
+        },
+        {
+            "name": "Penne quattro formaggi",
+            "description": "mit Mascarpone, Gorgonzola, Mozzarella, Parmesan und Sahnesauce",
+            "price": "11.40"
+        },
+        {
+            "name": "Penne alla diavola (vegetarisch, scharf)",
+            "description": "mit Tomaten-Basilikum-Sahnesauce",
+            "price": "10.40"
+        },
+        {
+            "name": "Penne all'ortolana (vegan)",
+            "description": "mit Champignons, Broccoli, Paprika, roten Zwiebeln und Tomatensauce",
+            "price": "11.40"
+        },
+        {
+            "name": "Penne al pollo (scharf)",
+            "description": "mit Hähnchenbruststreifen, roter Paprika, Chili, Knoblauch und Tomaten-Sahnesauce",
+            "price": "12.40"
+        },
+        {
+            "name": "Tagliatelle all'orientale",
+            "description": "mit Black Tiger Gambas und gelber Curry-Sahnesauce",
+            "price": "13.40"
+        },
+        {
+            "name": "Tagliatelle ai porcini (vegetarisch)",
+            "description": "mit Steinpilzen, Knoblauch und Sahnesauce",
+            "price": "12.40"
+        },
+        {
+            "name": "Tagliatelle al salmone",
+            "description": "mit frischen Lachswürfeln und Tomaten-Kräuter-Sahnesauce",
+            "price": "13.40"
+        },
+        {
+            "name": "Tagliatelle agli scampi",
+            "description": "mit Black Tiger Gambas, Kirschtomaten, Knoblauch und frischen Kräutern",
+            "price": "13.40"
+        },
+        {
+            "name": "Tagliatelle al filetto (scharf)",
+            "description": "mit argentinischen Rinderfiletspitzen, Knoblauch, Chili und Tomaten-Basilikumsauce",
+            "price": "13.40"
+        },
+        {
+            "name": "Tagliatelle con asparagi e gamberi",
+            "description": "mit Black Tiger Gambas, grünem Spargel, Kirschtomaten und Tomaten-Sahnesauce",
+            "price": "14.40"
+        },
+        {
+            "name": "Tagliatelle con filetto di manzo e tartufo",
+            "description": "mit Rinderfiletspitzen in einer Trüffelrahmsauce",
+            "price": "14.40"
+        },
+        {
+            "name": "Tortellini di carne alla panna",
+            "description": "mit Tortellini mit gemischter Fleischfüllung, gekochtem italienischen Schinken und Kräuter-Sahnesauce",
+            "price": "10.40"
+        },
+        {
+            "name": "Tortellini di carne al gorgonzola e noci",
+            "description": "mit Tortellini mit gemischter Fleischfüllung Gorgonzola-Walnuss-Sahnesauce",
+            "price": "11.40"
+        },
+        {
+            "name": "Ravioli ai porcini (vegetarisch)",
+            "description": "mit Ravioli mit Steinpilzfüllung und Steinpilz-Sahnesauce",
+            "price": "13.40"
+        },
+        {
+            "name": "Gnocchi al pesto genovese (vegan)",
+            "description": "mit Sauce aus gestoßenem Knoblauch, Olivenöl, Basilikum und Pinienkernen",
+            "price": "12.40"
+        },
+        {
+            "name": "Gnocchi ripieni al tartufo (vegetarisch)",
+            "description": "mit Gnocchi mit Steinpilz-Mozzarella-Füllung und Trüffelsauce",
+            "price": "14.40"
+        }
+    ],
+    "5": [
+        {
+            "img": "./img/pasta_ueberbacken2.png",
+            "name": "Pasta al Forno",
+            "comment": ""
+        },  
+        {
+            "name": "Crespelle spinaci e ricotta",
+            "description": "Crêpes mit Spinat-Ricotta-Füllung und Bechamel-Tomatensauce, überbacken mit Mozzarella und Parmesan",
+            "price": "13.40"
+        },
+        {
+            "name": "Crespelle spinaci, tartufo e ricotta",
+            "description": "Crêpes mit Spinat-Ricotta-Füllung und Trüffel-Sahnesauce, überbacken mit Mozzarella und Parmesan",
+            "price": "14.40"
+        },
+        {
+            "name": "Tortellini di carne al forno",
+            "description": "mit frischen Tortellini mit gemischter Fleischfüllung, gekochtem, italienischen Schinken, Champignons und Tomaten-Sahnesauce, überbacken mit Mozzarella und Parmesan",
+            "price": "12.40"
+        },
+        {
+            "name": "Gnocchi con spinaci",
+            "description": "mit Blattspinat und Knoblauch-Sahnesauce, überbacken mit Mozzarella",
+            "price": "12.00"
+        },
+        {
+            "name": "Penne al forno",
+            "description": "mit Bolognese und Bechamelsauce, überbacken mit Mozzarella und Parmesan",
+            "price": "11.00"
+        },
+        {
+            "name": "Lasagne classica",
+            "description": "mit Bolognese und Bechamelsauce, überbacken mit Mozzarella und Parmesan",
+            "price": "11.00"
+        }
+    ],
+    "6": [
+        {
+            "img": "./img/restaurant_risotto.png",
+            "name": "Risotto",
+            "comment": ""
+        },  
+        {
+            "name": "Ristto ai porcini",
+            "description": "mit Steinpilzen, Parmesan und Petersilie",
+            "price": "13.40"
+        },
+        {
+            "name": "Risotto La Fiamma",
+            "description": "mit Safran, Black Tiger Gambas, grünem Spargel, Parmesan und Petersilie",
+            "price": "14.40"
+        }
+    ],
+    "7": [
+        {
+            "img": "./img/restaurant_fleisch.png",
+            "name": "Carne - Fleischsgerichte",
+            "comment": "Alle Gerichte werden mit frischem Gemüse und einer Kartoffelbeilage serviert."
+        },  
+        {
+            "name": "Saltimbocca alla romana",
+            "description": "mit Kalbsmedaillons, Salbei, Parmaschinken und Weißweinsauce",
+            "price": "22.40"
+        },
+        {
+            "name": "Scaloppine ai funghi",
+            "description": "mit Kalbsmedaillons und Champignon-Sahnesauce",
+            "price": "22.40"
+        },
+        {
+            "name": "Bistecca al pepe",
+            "description": "mit argentinischem Rumpsteak und Pfeffersauce",
+            "price": "23.40"
+        },
+        {
+            "name": "Bistecca alla pizzaiola",
+            "description": "mit argentinischem Rumpsteak, Oliven, Kapern und Tomatensauce",
+            "price": "23.40"
+        },
+        {
+            "name": "Pollo alla diavola (scharf)",
+            "description": "mit Hähnchenbrust, Chili und Tomaten-Kräutersauce",
+            "price": "17.40"
+        },
+        {
+            "name": "Pollo al Curry",
+            "description": "mit Hähnchenbrust und gelber Currysauce",
+            "price": "17.40"
+        },
+        {
+            "name": "Pollo alla senape",
+            "description": "mit Hähnchenbrust und Dijon-Senfsauce",
+            "price": "17.40"
+        }
+    ],
+    "8": [
+        {
+            "img": "./img/restaurant_fisch2.png",
+            "name": "Pesce - Fischgerichte",
+            "comment": "Alle Gerichte werden mit frischem Gemüse und einer Kartoffelbeilage serviert."
+        },       
+        {
+            "name": "Salmone alla griglia",
+            "description": "mit frischem, norwegischem Lachsfilet vom Grill und Kirschtomaten",
+            "price": "23.40"
+        },
+        {
+            "name": "Salmone al vino bianco",
+            "description": "mit frischem, norwegischem Lachsfilet mit Weißweinsauce",
+            "price": "23.40"
+        },
+        {
+            "name": "Gamberi al pepe e pernod",
+            "description": "mit Black Tiger Gambas und Pfeffer-Pernodsauce",
+            "price": "22.40"
+        },
+        {
+            "name": "Gamberoni alla griglia",
+            "description": "mit Black Tiger Gambas vom Grill und Kirschtomaten",
+            "price": "22.40"
+        }
+    ],
+    "9": [
+        {
+            "img": "./img/pizza_pizzabrtchen2.png",
+            "name": "Focaccia",
+            "comment": "Alle Focaccia sind dünne, traditionelle Weizenbrote und kommen frisch aus dem Steinofen."
+        },         
+        {
+            "name": "Focaccia Pomodorini (vegan)",
+            "description": "mit Tomaten-Salsa, Strauchtomaten, roten Zwiebeln, Basilikum, Olivenöl und Oregano",
+            "price": "9.90"
+        },
+        {
+            "name": "Focaccia olio di oliva, rosmarino e sale (vegan)",
+            "description": "mit Olivenöl, Rosmarin und Meersalz",
+            "price": "9.90"
+        },
+        {
+            "name": "Focaccia parmigiano e mozzarella (scharf)",
+            "description": "mit Mozzarella, Parmesan, Knoblauch, Olivenöl, Petersilie und Chili",
+            "price": "9.90"
+        },
+        {
+            "name": "Focaccia parma e rucola",
+            "description": "mit Parmaschinken, Rucola und Parmesan",
+            "price": "11.90"
+        }
+    ],
+    "10": [
+        {
+            "img": "./img/restaurant_soesschen.png",
+            "name": "Additivo",
+            "comment": ""
+        },  
+        {
+            "name": "Crema di mascarpone (vegetarisch)",
+            "description": "frischer hausgemachter Mascarpone-Dip mit Knoblauch und Kräutern",
+            "price": "2.50"
+        }
+    ],
+    "11": [
+        {
+            "img": "./img/dessert_tiramisu.png",
+            "name": "Dolci",
+            "comment": ""
+        },
+        {
+            "name": "Hausgemachtes Tiramisu",
+            "description": "mit feinem Biskuit und Espresso-Mascarponecreme",
+            "price": "6.50"
+        },
+        {
+            "name": "Hausgemachte Panna cotta alla fragola",
+            "description": "mit Sahnecreme, Bourbon, Vanille und Erdbeermark",
+            "price": "4.90"
+        }
+    ],
+    "12": [
+        {
+            "img": "./img/getraenke_wasser.png",
+            "name": "Alkoholfreie Getränke",
+            "comment": ""
+        },
+        {
+            "name": "Coca-Cola 1,0l (MEHRWEG)",
+            "description": "Coca-Cola steht für einzigartigen Geschmack, Erfrischung und Momente voller Lebensfreude. Die 1,0l PET Mehrwegflasche für die perfekte Erfrischung für jeden Tag - allein oder zu zweit.",
+            "price": "2.85"
+        },
+        {
+            "name": "Coca-Cola Zero Sugar 1,0l (MEHRWEG)",
+            "description": "Keine Kalorien. Null Zucker. Für alle Coke Liebhaber, die beim Geschmack keinen Kompromiss eingehen wollen.",
+            "price": "2.85"
+        },
+        {
+            "name": "Coca-Cola light taste 1,0l (MEHRWEG)",
+            "description": "Light taste: Leichter als das Original und in stylischem Design überzeugt Cola Light nicht nur die eigene Fangemeinschaft - und das komplett zucker- und kalorienfrei.",
+            "price": "2.85"
+        },
+        {
+            "name": "Fanta Orange 1,0l (MEHRWEG)",
+            "description": "Trinke Fanta. Lebe bunter. Spritzig erfrischend begleitet die originale Fanta Orange jede Lebenssituation und macht jetzt noch mehr Spaß.",
+            "price": "2.85"
+        },
+        {
+            "name": "Sprite 1,0l (MEHRWEG)",
+            "description": "Bist du bereit für Sprite? Die einzigartige Formel aus grünen Limetten und sonnengelben Zitronen erfrischt dich maximal.",
+            "price": "2.85"
+        },
+        {
+            "name": "Acqua Panna Naturell 0,75l",
+            "description": "",
+            "price": "2.85"
+        },
+        {
+            "name": "Orangina Classic 0,25l",
+            "description": "",
+            "price": "2.35"
+        },
+        {
+            "name": "Orangina Rouge 0,25l",
+            "description": "",
+            "price": "2.35"
+        },
+        {
+            "name": "tut gut Malzbier 0,5l",
+            "description": "",
+            "price": "2.42"
+        }
+    ],
+    "13": [
+        {
+            "img": "./img/getraenke_bier2.png",
+            "name": "Alkoholische Getränke",
+            "comment": ""
+        },
+        {
+            "name": "König Pilsener 0,5l",
+            "description": "",
+            "price": "2.42"
+        },
+        {
+            "name": "Prosecco Frizzante 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "La Fiamma Trebbiano d'Abruzzo 0,75l",
+            "description": "",
+            "price": "11.90"
+        },
+        {
+            "name": "Lugana Sorgente 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Pinot Grigio 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Chardonnay 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Brezza Umbria Bianco 0,75l",
+            "description": "",
+            "price": "11.90"
+        },
+        {
+            "name": "La Fiamma Montepulciano d'Abruzzo 0,75l",
+            "description": "",
+            "price": "150.00"
+        },
+        {
+            "name": "Primitivo Grifoni 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Cabernet Sauvignon 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Nero d'Avola 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Cygnus Cabernet Sauvignon 0,75l",
+            "description": "",
+            "price": "17.90"
+        },
+        {
+            "name": "Prosecco Rose 0,75l",
+            "description": "",
+            "price": "13.90"
+        },
+        {
+            "name": "Chiaretto 18 e Quarantacinque Rose 0,75l",
+            "description": "",
+            "price": "11.90"
+        },
+        {
+            "name": "Brezza Umbria Rose 0,75l",
+            "description": "",
+            "price": "11.90"
+        }
+    ]
+}

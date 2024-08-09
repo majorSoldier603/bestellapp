@@ -26,3 +26,24 @@ function clickt(item) {
 	
 	lastItem = item
 }
+
+function skipBack() {
+	document.getElementById("scroll").scrollLeft -= 100;
+}
+
+function skipFor() {
+	document.getElementById("scroll").scrollLeft += 100;
+}
+
+function minecraftLever(whichCase) {
+	deliveryBnt = document.getElementById("delivery")
+	pickupBnt = document.getElementById("pickup")
+	
+	if (whichCase.id === "delivery") {
+		deliveryBnt.classList = "active"
+		pickupBnt.classList.remove("active")
+	} else {
+		pickupBnt.classList = "active"
+		deliveryBnt.classList.remove("active")
+	}
+}
