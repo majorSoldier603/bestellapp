@@ -2,5 +2,5 @@
 STRING=""
 read STRING
 git add .
-git commit -m '${STRING}'
+git commit -m "${STRING}"
 echo ${STRING}
