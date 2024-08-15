@@ -136,6 +136,7 @@ function loadCard(item) {
 }
 
 function addChangeDB(category, cardItem) {
+	console.log(category, cardItem)
 	localStorage.setItem(category, JSON.stringify(cardItem))
 }
 
@@ -148,6 +149,7 @@ function cardItemExists(ItemUniqueID) {
 		seachArray.push(cardArray[index].uniqueID)
 	}
 	const found = seachArray.findIndex((index) => index === ItemUniqueID);
+	console.log(found, seachArray)
 	return found
 }
 
@@ -163,12 +165,9 @@ function addToCard(category, itemID) {
 		cardArray[cardItemExists(ItemUniqueID)].times = cardArray[cardItemExists(ItemUniqueID)].times + 1
 		
 		addChangeDB(cardArray, cardItemExists(ItemUniqueID))
-		//loadCard()
 	} else {
-		console.log(cardItem)
-		cardArray.push({"name": cardItem[1][itemID].name, "description": cardItem[1][itemID].description, "price": cardItem[1][itemID].price, "times": 1, "category": category, "ID":  itemID, "uniqueID": ItemUniqueID })
-		console.log(cardArray)
-		//loadCard()
+		cardArray.push({"name": cardItem[1][itemID].name, "description": cardItem[1][itemID].description, "price": cardItem[1][itemID].price, "times": 1, "category": category, "ID":  itemID, "uniqueID": ItemUniqueID})
+		addChangeDB("card", cardArray)
 	}
 }	
 
