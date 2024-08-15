@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="init()">
-	<header class="frameworkThatSaysIsALibraryCalldReact">
+<body onload="init()"id="body" onscroll="cssBs()">
+	<header class="frameworkThatSaysIsALibraryCalldReact" id="header">
 		<img src="Material/Logo/Bestell App- Logo.svg" alt="" srcset="" style="width: 138px;">
 		<h3>Speisekarte</h3>
 		<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--menu" width="24" height="24"><path d="M15 4.281H1V2.97h14V4.28Zm0 7.438H1v1.312h14V11.72Zm0-4.375H1v1.312h14V7.344Z"></path></svg>
 	</header>
-	<main class="frameworkThatSaysIsALibraryCalldReact" style="align-items: flex-start; height: 100%; overflow-x: hidden;">
-		<section class="frameworkThatSaysIsALibraryCalldReact" style="flex-direction: column; justify-content: unset;">
-			<div class="banner" id="banner">
-				<img class="headerImg" src="./img/header.png" alt="">	
-				<img class="headerImgBig" src="img/header wide.png" alt="" srcset="">
-				<div class="background-div frameworkThatSaysIsALibraryCalldReact">
-					<div class="frameworkThatSaysIsALibraryCalldReact">	
-						<img src="img/logo_465x320.png" alt="" srcset="">
+		<section class="frameworkThatSaysIsALibraryCalldReact" style="justify-content: unset; width: 100%; align-items: normal;">			
+			<main class="MainContent">
+				<div class="banner" id="banner">
+					<img class="headerImg" src="./img/header.png" alt="">	
+					<img class="headerImgBig" src="img/header wide.png" alt="" srcset="">
+					<div class="background-div frameworkThatSaysIsALibraryCalldReact">
+						<div class="frameworkThatSaysIsALibraryCalldReact">	
+							<img src="img/logo_465x320.png" alt="" srcset="">
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<main class="MainContent">
+
 				<div style="width: 100%; display: flex; flex-direction: column; align-items: center; background-color: #fefeff; padding-top: 8px;">
 					<h1>Pizzeria La Fiamma</h1>
 					<div class="reviews frameworkThatSaysIsALibraryCalldReact" style="justify-content: unset; padding-bottom: 16px; margin-top: 16px;">
@@ -73,43 +72,42 @@
 					<ul id="AlcoholicBeverages"></ul>
 				</div>
 			</main>
+			<aside class="cart">
+				<h2>Warenkorb</h2>
+					
+				<div class="switchBnt">
+					<fieldset>
+						<div class="active" onclick="minecraftLever(delivery)" id="delivery">
+							<label style="padding: 8px 24px; box-sizing: border-box;">
+								<svg style="margin-right: 8px;" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--bike" width="20" height="20"><path d="M12.139 7.405 11 4.159a.218.218 0 0 1 0-.158.246.246 0 0 1 .158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 0 0-.998 1.934l.359 1.015H9.75a2.433 2.433 0 0 0-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 0 0-.735-.105 2.826 2.826 0 1 0 2.826 2.818v-.201l1.969-2.66a1.111 1.111 0 0 1 .875-.438h.831l.254.718a2.844 2.844 0 1 0 1.313-.219h-.01ZM4.08 11.719a1.514 1.514 0 1 1 1.514-1.514 1.505 1.505 0 0 1-1.514 1.514Zm7.875 0a1.514 1.514 0 1 1 1.4-.933 1.505 1.505 0 0 1-1.4.933Z"></path></svg>					
+								<div>	
+									<h4>Lieferung</h4>
+									<h5>30-55 min</h5>
+								</div>
+							</label>
+						</div>
+	
+						<div onclick="minecraftLever(pickup)" id="pickup">
+							<label style="padding: 8px 24px;">
+								<svg style="margin-right: 8px;" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--pick-up" width="20" height="20"><path d="M8.875 2.531H15V1.22H8.875a4.375 4.375 0 0 0-3.929 2.625H3.257l-.122.052A2.047 2.047 0 0 0 1.962 5.2a2.205 2.205 0 0 0 .788 2.275l-.796 5.95c-.012.365.12.72.367.989a1.163 1.163 0 0 0 .875.367h8.671a1.162 1.162 0 0 0 .875-.367 1.364 1.364 0 0 0 .36-1.05l-.77-5.793a2.695 2.695 0 0 0 1.478-1.54H15V4.72h-2.266l-.123.507a1.558 1.558 0 0 1-1.864 1.252l-.34-.062-1.13 1.129a.578.578 0 0 1-.805 0 .586.586 0 0 1-.12-.64.551.551 0 0 1 .13-.183l1.618-1.54a.752.752 0 0 0 .184-.875.77.77 0 0 0-.718-.49H6.46a2.888 2.888 0 0 1 2.415-1.286Zm0 6.493a1.873 1.873 0 0 0 1.33-.551l.665-.666h.087l.753 5.662H3.266l.761-5.688h3.098a1.873 1.873 0 0 0 1.75 1.242Zm-.639-3.868-.665.63c-.198.192-.35.425-.446.683h-3.5a.936.936 0 0 1-.359-.875.717.717 0 0 1 .324-.394h4.646v-.044Z"></path></svg>
+								<div>	
+									<h4>Abholung</h4>
+									<h5>15 min</h5>
+								</div>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+	
+				<ul id="cardItems"></ul>
+				  
+				<div id="billingArea">
+					<div><span>Zwischensumme</span><span>48,00 €</span></div>
+					<div><span>Lieferkosten</span><span>2,00 €</span></div>
+					<div><strong>Gesamt</strong><strong>50,00 €</strong></div>
+					<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>
+				</div>
+			</aside>
 		</section>
-		<aside class="cart">
-			<h2>Warenkorb</h2>
-				
-			<div class="switchBnt">
-				<fieldset>
-					<div class="active" onclick="minecraftLever(delivery)" id="delivery">
-						<label style="padding: 8px 24px; box-sizing: border-box;">
-							<svg style="margin-right: 8px;" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--bike" width="20" height="20"><path d="M12.139 7.405 11 4.159a.218.218 0 0 1 0-.158.246.246 0 0 1 .158-.122l1.216-.447v-1.4l-1.627.613a1.514 1.514 0 0 0-.998 1.934l.359 1.015H9.75a2.433 2.433 0 0 0-1.925.962l-1.207 1.61-1.06-2.135h.692V4.72h-3.5V6.03h1.339l.726 1.461a2.87 2.87 0 0 0-.735-.105 2.826 2.826 0 1 0 2.826 2.818v-.201l1.969-2.66a1.111 1.111 0 0 1 .875-.438h.831l.254.718a2.844 2.844 0 1 0 1.313-.219h-.01ZM4.08 11.719a1.514 1.514 0 1 1 1.514-1.514 1.505 1.505 0 0 1-1.514 1.514Zm7.875 0a1.514 1.514 0 1 1 1.4-.933 1.505 1.505 0 0 1-1.4.933Z"></path></svg>					
-							<div>	
-								<h4>Lieferung</h4>
-								<h5>30-55 min</h5>
-							</div>
-						</label>
-					</div>
-
-					<div onclick="minecraftLever(pickup)" id="pickup">
-						<label style="padding: 8px 24px;">
-							<svg style="margin-right: 8px;" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--pick-up" width="20" height="20"><path d="M8.875 2.531H15V1.22H8.875a4.375 4.375 0 0 0-3.929 2.625H3.257l-.122.052A2.047 2.047 0 0 0 1.962 5.2a2.205 2.205 0 0 0 .788 2.275l-.796 5.95c-.012.365.12.72.367.989a1.163 1.163 0 0 0 .875.367h8.671a1.162 1.162 0 0 0 .875-.367 1.364 1.364 0 0 0 .36-1.05l-.77-5.793a2.695 2.695 0 0 0 1.478-1.54H15V4.72h-2.266l-.123.507a1.558 1.558 0 0 1-1.864 1.252l-.34-.062-1.13 1.129a.578.578 0 0 1-.805 0 .586.586 0 0 1-.12-.64.551.551 0 0 1 .13-.183l1.618-1.54a.752.752 0 0 0 .184-.875.77.77 0 0 0-.718-.49H6.46a2.888 2.888 0 0 1 2.415-1.286Zm0 6.493a1.873 1.873 0 0 0 1.33-.551l.665-.666h.087l.753 5.662H3.266l.761-5.688h3.098a1.873 1.873 0 0 0 1.75 1.242Zm-.639-3.868-.665.63c-.198.192-.35.425-.446.683h-3.5a.936.936 0 0 1-.359-.875.717.717 0 0 1 .324-.394h4.646v-.044Z"></path></svg>
-							<div>	
-								<h4>Abholung</h4>
-								<h5>15 min</h5>
-							</div>
-						</label>
-					</div>
-				</fieldset>
-			</div>
-
-			<ul id="cardItems"></ul>
-			  
-			<div id="billingArea">
-				<div><span>Zwischensumme</span><span>48,00 €</span></div>
-				<div><span>Lieferkosten</span><span>2,00 €</span></div>
-				<div><strong>Gesamt</strong><strong>50,00 €</strong></div>
-				<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>
-			</div>
-		</aside>
-	</main>
 </body>
 </html>

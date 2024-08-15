@@ -11,6 +11,32 @@ async function init() {
 	}
 }
 
+function cssBs() {
+	elementToCheck = document.getElementById("header")
+
+	window.addEventListener('scroll', () => { 
+		if (checkVisiblety(elementToCheck)) { 
+			document.getElementById("cardItems").style = "max-height: calc(100% - 416px);"
+		} else { 
+			document.getElementById("cardItems").style ="max-height: calc(100% - 342px);"
+		} 
+	}); 
+}
+
+function checkVisiblety(Ele) { 
+	const item = Ele.getBoundingClientRect(); 
+	return ( 
+		item.top >= 0 && 
+		item.left >= 0 && 
+		item.bottom <= ( 
+			window.innerHeight || 
+			document.documentElement.clientHeight) && 
+		item.right <= ( 
+			window.innerWidth || 
+			document.documentElement.clientWidth) 
+	); 
+} 
+
 function DEL() {
 	localStorage.clear();
 }
@@ -36,6 +62,7 @@ function setNewlocalStorage(data) {
 	localStorage.setItem('11', JSON.stringify(data[11]))
 	localStorage.setItem('12', JSON.stringify(data[12]))
 	localStorage.setItem('13', JSON.stringify(data[13]))
+	localStorage.setItem('card', JSON.stringify(data["card"]))
 }
 
 function lodingInit() {
@@ -86,7 +113,7 @@ function returnComments(properties) {
 
 function loadCard(item) {
 	renderOverwrite(cardItems.id, `				
-		<li>
+		<li id="">
 			<h4>${item.times}</h4>
 			<div style="margin-bottom: 8px;">
 				<h3>${item.name}</h3>
@@ -112,28 +139,43 @@ function addChangeDB(category, cardItem) {
 	localStorage.setItem(category, JSON.stringify(cardItem))
 }
 
+function cardItemExists(ItemUniqueID) {
+	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
+
+	let seachArray = []
+
+	for (let index = 1; index < cardArray.length; index++) {
+		seachArray.push(cardArray[index].uniqueID)
+	}
+	const found = seachArray.findIndex((index) => index === ItemUniqueID);
+	return found
+}
+
 function addToCard(category, itemID) {
 	const cardItem = JSON.parse(localStorage.getItem(category) || "[]");
+	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
+
 	console.log(cardItem, itemID)
+	ItemUniqueID = `${category}` + `${itemID}`
 
-	if (cardItem[1][itemID].times === 0) {
-		cardItem[1][itemID].times = cardItem[1][itemID].times + 1
-
-		addChangeDB(category, cardItem)
-		loadCard(cardItem[1][itemID])
+	if (cardItemExists(ItemUniqueID) === Number) {
+		console.log(cardArray[cardItemExists(ItemUniqueID)])
+		cardArray[cardItemExists(ItemUniqueID)].times = cardArray[cardItemExists(ItemUniqueID)].times + 1
+		
+		addChangeDB(cardArray, cardItemExists(ItemUniqueID))
+		//loadCard()
 	} else {
-		cardItem[1][itemID].times = cardItem[1][itemID].times + 1
-		cardItem[1][itemID].price = cardItem[1][itemID].price * cardItem[1][itemID].times
-
-		addChangeDB(category, cardItem)
-		loadCard(cardItem[1][itemID])
+		console.log(cardItem)
+		cardArray.push({"name": cardItem[1][itemID].name, "description": cardItem[1][itemID].description, "price": cardItem[1][itemID].price, "times": 1, "category": category, "ID":  itemID, "uniqueID": ItemUniqueID })
+		console.log(cardArray)
+		//loadCard()
 	}
-}
+}	
 
 let lastItem
 
 function clickt(item) {
-	console.log(lastItem )
+	console.log(lastItem)
 	if (lastItem) {
 		document.getElementById(lastItem).classList = ""
 	} 
