@@ -4,11 +4,13 @@ async function init() {
 		console.log("Local Storage was found, Loading it ...")
 		lodingInit()
 		loadCard()
+		cssBs()
 	} else {
 		console.warn("Local Storage was not found, Loading default ...")
 		DEL();
 		await fetchData();
 		lodingInit()
+		cssBs()
 	}
 }
 
@@ -116,21 +118,23 @@ function loadCard() {
 	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
 	renderOverwrite(cardItems, "")
 	for (let index = 1; index < cardArray.length; index++) {
+		price = cardArray[index].price * cardArray[index].times
+		priceRounded = price.toFixed(2)
 		renderit("cardItems", `
 			<li id="">
 				<h4>${cardArray[index].times}</h4>
 				<div style="margin-bottom: 8px;">
 					<h3>${cardArray[index].name}</h3>
-					<span>${cardArray[index].price} €</span>
+					<span>${priceRounded} €</span>
 				</div>
 				<div>
 					<strong>Anmerkung hinzufügen</strong>
 					<div>
-						<button>
+						<button onclick="removeFromCard(${index})">
 							<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--minus" width="24" height="24"><path d="M14.125 7.344H1.875v1.312h12.25V7.344Z"></path></svg>							
 						</button>
 						<span>${cardArray[index].times}</span>
-						<button>
+						<button onclick="addToCard(${cardArray[index].category +`,`+ cardArray[index].ID})">
 							<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--plus" width="24" height="24"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344Z"></path></svg>
 						</button>
 					</div>
@@ -171,6 +175,21 @@ function addToCard(category, itemID) {
 		loadCard()
 	}
 }	
+
+function removeFromCard(ItemID) {
+	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
+	if (cardArray[ItemID].times === 1) {
+		lol = ItemID + 1
+		cardArray.splice(ItemID, 1)
+		console.log(cardArray)
+		addChangeDB("card", cardArray)
+		loadCard()		
+	} else {
+		cardArray[ItemID].times = cardArray[ItemID].times - 1
+		addChangeDB("card", cardArray)
+		loadCard()
+	}
+}
 
 let lastItem
 
