@@ -216,22 +216,35 @@ function PriceCalculator() {
 function loadCardPrice(subtotal) {
 	subtotalRoundet = subtotal.toFixed(2)
 	total = Number(subtotalRoundet) + 2
-	renderOverwrite(billingArea,`
-		<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
-		<div><span>Lieferkosten</span><span>2,00 €</span></div>
-		<div><strong>Gesamt</strong><strong>${total.toFixed(2)} €</strong></div>
-		<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>	
-	`)
+	if (forPickup === "pickup") {
+		renderOverwrite(billingArea,`
+			<span>
+				<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
+				
+				<div><strong>Gesamt</strong><strong>${subtotalRoundet} €</strong></div>
+			</span>
+			<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>	
+		`)
+	} else {
+		renderOverwrite(billingArea,`
+			<span>
+				<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
+				<div><span>Lieferkosten</span><span>2,00 €</span></div>
+				<div><strong>Gesamt</strong><strong>${total.toFixed(2)} €</strong></div>
+			</span>
+			<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>	
+		`)
+	}
 }
 
 let lastItem
 
-function clickt(item) {
+function clickt(item, scrollTo) {
 	console.log(lastItem)
 	if (lastItem) {
 		document.getElementById(lastItem).classList = ""
 	} 
-	
+	document.getElementById(scrollTo.id).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 	document.getElementById(item).classList = "current"	
 	
 	lastItem = item
@@ -245,10 +258,11 @@ function skipFor() {
 	document.getElementById("scroll").scrollLeft += 100;
 }
 
+let forPickup
+
 function minecraftLever(whichCase) {
 	deliveryBnt = document.getElementById("delivery")
 	pickupBnt = document.getElementById("pickup")
-	
 	if (whichCase.id === "delivery") {
 		deliveryBnt.classList = "active"
 		pickupBnt.classList.remove("active")
@@ -256,4 +270,6 @@ function minecraftLever(whichCase) {
 		pickupBnt.classList = "active"
 		deliveryBnt.classList.remove("active")
 	}
+	forPickup = whichCase.id
+	PriceCalculator()
 }

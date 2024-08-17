@@ -37,20 +37,20 @@
 					<button class="button" onclick=""><svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16"><path d="M14.125 13.162 11.15 10.18a5.049 5.049 0 1 0-.936.936l2.948 3.01.963-.963Zm-7-2.318a3.718 3.718 0 1 1 3.719-3.719 3.728 3.728 0 0 1-3.72 3.719Z"></path></svg></button>
 					<button class="button" onclick="skipBack()" id="skipBack" style="margin-left: 4px;"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16"><path d="M10.96 2.82 5.605 8l5.399 5.197-.875.963-5.565-5.364a1.164 1.164 0 0 1 0-1.671l5.495-5.25.901.945Z"></path></svg></button>
 					<ul class="frameworkThatSaysIsALibraryCalldReact current" id="scroll">
-						<li onclick="clickt(`Beliebt`)" id="Beliebt">Beliebt ❤️</li>
-						<li	onclick="clickt(`Antipasti - Vorspeisen`)" id="Antipasti - Vorspeisen">Antipasti - Vorspeisen</li>
-						<li	onclick="clickt(`Insalate`)" id="Insalate">Insalate</li>
-						<li	onclick="clickt(`Pizza`)" id="Pizza">Pizza</li>
-						<li	onclick="clickt(`Pasta`)" id="Pasta">Pasta</li>
-						<li	onclick="clickt(`Pasta al Forno`)" id="Pasta al Forno">Pasta al Forno</li>
-						<li	onclick="clickt(`Risotto`)" id="Risotto">Risotto</li>
-						<li	onclick="clickt(`Carne - Fleischsgerichte`)" id="Carne - Fleischsgerichte">Carne - Fleischsgerichte</li>
-						<li	onclick="clickt(`Pesce - Fischgerichte`)" id="Pesce - Fischgerichte">Pesce - Fischgerichte</li>
-						<li	onclick="clickt(`Focaccia`)" id="Focaccia">Focaccia</li>
-						<li	onclick="clickt(`Additivo`)" id="Additivo">Additivo</li>
-						<li	onclick="clickt(`Dolci`)" id="Dolci">Dolci</li>
-						<li	onclick="clickt(`Alkoholfreie Getränke`)" id="Alkoholfreie Getränke">Alkoholfreie Getränke</li>
-						<li	onclick="clickt(`Alkoholische Getränke`)" id="Alkoholische Getränke">Alkoholische Getränke</li>
+						<li onclick="clickt(`Beliebt`, Popular)" id="Beliebt">Beliebt ❤️</li>
+						<li	onclick="clickt(`Antipasti - Vorspeisen`, Starters)" id="Antipasti - Vorspeisen">Antipasti - Vorspeisen</li>
+						<li	onclick="clickt(`Insalate`, Salads)" id="Insalate">Insalate</li>
+						<li	onclick="clickt(`Pizza`, Pizzaa)" id="Pizza">Pizza</li>
+						<li	onclick="clickt(`Pasta`, Pastaa)" id="Pasta">Pasta</li>
+						<li	onclick="clickt(`Pasta al Forno`, BakedPasta)" id="Pasta al Forno">Pasta al Forno</li>
+						<li	onclick="clickt(`Risotto`, Risottoo)" id="Risotto">Risotto</li>
+						<li	onclick="clickt(`Carne - Fleischsgerichte`, Carnee)" id="Carne - Fleischsgerichte">Carne - Fleischsgerichte</li>
+						<li	onclick="clickt(`Pesce - Fischgerichte`, Pesce)" id="Pesce - Fischgerichte">Pesce - Fischgerichte</li>
+						<li	onclick="clickt(`Focaccia`), Focacciaa" id="Focaccia">Focaccia</li>
+						<li	onclick="clickt(`Additivo`, Additivoo)" id="Additivo">Additivo</li>
+						<li	onclick="clickt(`Dolci`, Dolcii)" id="Dolci">Dolci</li>
+						<li	onclick="clickt(`Alkoholfreie Getränke`, nonAlcoholicBeverages)" id="Alkoholfreie Getränke">Alkoholfreie Getränke</li>
+						<li	onclick="clickt(`Alkoholische Getränke`, AlcoholicBeverages)" id="Alkoholische Getränke">Alkoholische Getränke</li>
 					</ul>
 					<button class="button" onclick="skipFor()" id="skipFor" style="margin-left: 12px; margin-right: 4px;"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16"><path d="M5.044 13.18 10.399 8 5 2.82l.875-.962 5.539 5.346a1.164 1.164 0 0 1 0 1.636l-5.469 5.285-.901-.945Z"></path></svg></button>
 					<button class="button" onclick=""><svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16"><path d="M2.313 11.938a1.312 1.312 0 1 0 0-2.625 1.312 1.312 0 0 0 0 2.624Z"></path><path d="M14.125 4.719h-8.75V6.03h8.348l.402-1.312Z"></path><path d="M2.313 6.688a1.313 1.313 0 1 0 0-2.626 1.313 1.313 0 0 0 0 2.625Z"></path><path d="M12.506 9.969H5.375v1.312h6.729l.402-1.312Z"></path></svg></button>
@@ -108,6 +108,8 @@
 					<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>
 				</div>
 			</aside>
+
+
 		</section>
 </body>
 </html>

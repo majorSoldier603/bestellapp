@@ -232,12 +232,20 @@ main div h3 {
   margin: 0;
   width: 100%;
   height: 200px;
+  display: flex;
+  justify-content: space-between;
 }
-#billingArea div {
+#billingArea span {
+  width: 100%;
+}
+#billingArea span div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+#billingArea span div span {
+  width: fit-content;
 }
 #billingArea button {
   background-color: #f36805;
