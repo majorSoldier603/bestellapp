@@ -5,6 +5,7 @@ async function init() {
 		lodingInit()
 		loadCard()
 		cssBs()
+		PriceCalculator()
 	} else {
 		console.warn("Local Storage was not found, Loading default ...")
 		DEL();
@@ -169,10 +170,12 @@ function addToCard(category, itemID) {
 		cardArray[cardItemExists(ItemUniqueID) + 1].times = cardArray[cardItemExists(ItemUniqueID) + 1].times + 1
 		addChangeDB("card", cardArray)
 		loadCard()
+		PriceCalculator()
 	} else {
 		cardArray.push({"name": cardItem[1][itemID].name, "description": cardItem[1][itemID].description, "price": cardItem[1][itemID].price, "times": 1, "category": category, "ID":  itemID, "uniqueID": ItemUniqueID})
 		addChangeDB("card", cardArray)
 		loadCard()
+		PriceCalculator()
 	}
 }	
 
@@ -183,12 +186,42 @@ function removeFromCard(ItemID) {
 		cardArray.splice(ItemID, 1)
 		console.log(cardArray)
 		addChangeDB("card", cardArray)
-		loadCard()		
+		loadCard()
+		PriceCalculator()
 	} else {
 		cardArray[ItemID].times = cardArray[ItemID].times - 1
 		addChangeDB("card", cardArray)
 		loadCard()
+		PriceCalculator()
 	}
+}
+
+
+function PriceCalculator() {
+	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
+	let subtotal = null
+	for (let index = 1; index < cardArray.length; index++) {
+		PriceCache = cardArray[index].price * cardArray[index].times		
+		if (subtotal == null) {
+			subtotal = PriceCache
+		} else if (PriceCache !== subtotal) {
+			subtotal = PriceCache + subtotal	
+			cardArray[0].subtotal = subtotal
+		}
+	}
+	addChangeDB("card", cardArray)
+	loadCardPrice(subtotal)
+}
+
+function loadCardPrice(subtotal) {
+	subtotalRoundet = subtotal.toFixed(2)
+	total = Number(subtotalRoundet) + 2
+	renderOverwrite(billingArea,`
+		<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
+		<div><span>Lieferkosten</span><span>2,00 €</span></div>
+		<div><strong>Gesamt</strong><strong>${total.toFixed(2)} €</strong></div>
+		<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>	
+	`)
 }
 
 let lastItem
