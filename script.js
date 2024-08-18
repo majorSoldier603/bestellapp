@@ -93,7 +93,7 @@ function renderOverwrite(id, html) {
 }
 
 function returnMeals(currentMeal) {
-		responseHTML = `<h3>${currentMeal.name}</h3> <h5>${currentMeal.description}</h5> <h3>${currentMeal.price}</h3>`
+		responseHTML = `<h3>${currentMeal.name}</h3> <h5>${currentMeal.description}</h5> <h3>${currentMeal.price.toFixed(2)} €</h3>`
 		return responseHTML	
 }
 
@@ -213,6 +213,8 @@ function PriceCalculator() {
 	loadCardPrice(subtotal)
 }
 
+let price
+
 function loadCardPrice(subtotal) {
 	subtotalRoundet = subtotal.toFixed(2)
 	total = Number(subtotalRoundet) + 2
@@ -220,21 +222,48 @@ function loadCardPrice(subtotal) {
 		renderOverwrite(billingArea,`
 			<span>
 				<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
-				
 				<div><strong>Gesamt</strong><strong>${subtotalRoundet} €</strong></div>
 			</span>
-			<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>	
+			<button id="payNonMoba" onclick="invoceIt(payNonMoba,${subtotalRoundet})">Bezahlen (<h1 id="totalAmount">${subtotalRoundet} €</h1>)</button>
+			<button id="payMoba" onclick="invoceIt(payMoba,${subtotalRoundet})">Warenkorb (<h1 id="totalAmount">${subtotalRoundet} €</h1>)</button>
 		`)
+		price = subtotalRoundet
 	} else {
 		renderOverwrite(billingArea,`
 			<span>
 				<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
 				<div><span>Lieferkosten</span><span>2,00 €</span></div>
 				<div><strong>Gesamt</strong><strong>${total.toFixed(2)} €</strong></div>
-			</span>
-			<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>	
+			</span>	
+			<button id="payNonMoba" onclick="invoceIt(payNonMoba)">Bezahlen (<h1 id="totalAmount">${total.toFixed(2)} €</h1>)</button>
+			<button id="payMoba" onclick="invoceIt(payMoba)">Warenkorb (<h1 id="totalAmount">${total.toFixed(2)} €</h1>)</button>
 		`)
+		price = total.toFixed(2)
 	}
+}
+
+function invoceIt(diviceType) {
+	if (diviceType.id === "payNonMoba") {
+		document.getElementById("fullscreen").style = "display: flex;"
+	} else {
+		document.getElementById("card").classList = "cart cartFullscreen"
+		document.getElementById("payMoba").innerHTML = "Bezahlen" + " (" + price + ") €"
+		document.getElementById("body").style = "overflow-y: hidden;"
+		document.getElementById("cardItems").style = "max-height: 75%;"
+		document.getElementById("cardheadingmoba").style = "display: flex;"
+	}
+}
+
+function closeCartFullscreen() {
+	document.getElementById("card").classList = "cart"
+	document.getElementById("body").style = "overflow-y: scroll;"
+	document.getElementById("cardItems").style ="max-height: calc(100% - 342px);"
+	document.getElementById("cardheadingmoba").style = ""
+	document.getElementById("payMoba").innerHTML = "Warenkorb" + " (" + price + ") €"
+}
+
+function closefullscreen() {
+	document.getElementById("fullscreen").style = "display: none;"
 }
 
 let lastItem

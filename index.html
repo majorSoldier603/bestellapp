@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="init()"id="body" onscroll="cssBs()">
+<body onload="init()" id="body" onscroll="cssBs()">
 	<header class="frameworkThatSaysIsALibraryCalldReact" id="header">
 		<img src="Material/Logo/Bestell App- Logo.svg" alt="" srcset="" style="width: 138px;">
 		<h3>Speisekarte</h3>
@@ -72,9 +72,14 @@
 					<ul id="AlcoholicBeverages"></ul>
 				</div>
 			</main>
-			<aside class="cart">
-				<h2>Warenkorb</h2>
-					
+			<aside class="cart" id="card">
+				<h2 id="cardh2" class="cardh2">Warenkorb</h2>
+				
+				<span id="cardheadingmoba">
+					<h2>Warenkorb</h2>
+					<svg onclick="closeCartFullscreen()" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--close" width="28" height="28"><path d="M11.868 3.205 8 7.072 4.133 3.205l-.928.927L7.073 8l-3.868 3.867.928.928L8 8.927l3.868 3.868.927-.928L8.928 8l3.867-3.868-.927-.927Z"></path></svg>
+				</span>
+
 				<div class="switchBnt">
 					<fieldset>
 						<div class="active" onclick="minecraftLever(delivery)" id="delivery">
@@ -105,11 +110,16 @@
 					<div><span>Zwischensumme</span><span>48,00 €</span></div>
 					<div><span>Lieferkosten</span><span>2,00 €</span></div>
 					<div><strong>Gesamt</strong><strong>50,00 €</strong></div>
-					<button>Bezahlen (<h1 id="totalAmount"></h1>)</button>
+					<button id="payNonMoba">Bezahlen (<h1 id="totalAmount"></h1>)</button>
+					<button id="payMoba">Warenkorb (<h1 id="totalAmount"></h1>)</button>
 				</div>
 			</aside>
-
-
+			<div id="fullscreen" style="display: none;">
+				<span>
+					<h2>Test Bestellung</h2>
+					<svg onclick="closefullscreen()" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--close" width="28" height="28"><path d="M11.868 3.205 8 7.072 4.133 3.205l-.928.927L7.073 8l-3.868 3.867.928.928L8 8.927l3.868 3.868.927-.928L8.928 8l3.867-3.868-.927-.927Z"></path></svg>
+				</span>
+			</div>
 		</section>
 </body>
 </html>
