@@ -12,19 +12,38 @@ async function init() {
 		await fetchData();
 		lodingInit()
 		cssBs()
+		PriceCalculator()
 	}
 }
 
 function cssBs() {
-	elementToCheck = document.getElementById("header")
+	ele = document.getElementById("header")
+	ele0 = document.getElementById("footer")
 
 	window.addEventListener('scroll', () => { 
-		if (checkVisiblety(elementToCheck)) { 
-			document.getElementById("cardItems").style = "max-height: calc(100% - 416px);"
-		} else { 
-			document.getElementById("cardItems").style ="max-height: calc(100% - 342px);"
-		} 
+		checkEle(ele)
+		checkEle0(ele0)
 	}); 
+}
+
+function checkEle(ele) {
+	if (checkVisiblety(ele)) { 
+		document.getElementById("cardItems").style = "max-height: calc(100% - 416px);"
+	} else { 
+		document.getElementById("cardItems").style ="max-height: calc(100% - 342px);"
+	} 
+}
+
+function checkEle0(ele0) {
+	if (checkVisiblety(ele0)) {
+		if (window.innerWidth <= 1000) {
+			document.getElementById("card").style = "max-height: calc(100dvh - 88px)"
+		} else {
+			document.getElementById("card").style = "max-height: calc(100dvh - 144px)"
+		}
+	} else {
+		document.getElementById("card").style = "max-height: calc(100dvh - 0px)"
+	}
 }
 
 function checkVisiblety(Ele) { 
@@ -52,6 +71,10 @@ async function fetchData() {
 }
 
 function setNewlocalStorage(data) {
+	setNewlocalStorage0(data)
+	setNewlocalStorage1(data)
+}
+function setNewlocalStorage0(data) {
 	localStorage.setItem('0', JSON.stringify(data[0]))
 	localStorage.setItem('1', JSON.stringify(data[1]))
 	localStorage.setItem('2', JSON.stringify(data[2]))
@@ -60,6 +83,9 @@ function setNewlocalStorage(data) {
 	localStorage.setItem('5', JSON.stringify(data[5]))
 	localStorage.setItem('6', JSON.stringify(data[6]))
 	localStorage.setItem('7', JSON.stringify(data[7]))
+}
+
+function setNewlocalStorage1(data) {
 	localStorage.setItem('8', JSON.stringify(data[8]))
 	localStorage.setItem('9', JSON.stringify(data[9]))
 	localStorage.setItem('10', JSON.stringify(data[10]))
@@ -121,28 +147,33 @@ function loadCard() {
 	for (let index = 1; index < cardArray.length; index++) {
 		price = cardArray[index].price * cardArray[index].times
 		priceRounded = price.toFixed(2)
-		renderit("cardItems", `
-			<li id="">
-				<h4>${cardArray[index].times}</h4>
-				<div style="margin-bottom: 8px;">
-					<h3>${cardArray[index].name}</h3>
-					<span>${priceRounded} €</span>
-				</div>
-				<div>
-					<strong>Anmerkung hinzufügen</strong>
-					<div>
-						<button onclick="removeFromCard(${index})">
-							<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--minus" width="24" height="24"><path d="M14.125 7.344H1.875v1.312h12.25V7.344Z"></path></svg>							
-						</button>
-						<span>${cardArray[index].times}</span>
-						<button onclick="addToCard(${cardArray[index].category +`,`+ cardArray[index].ID})">
-							<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--plus" width="24" height="24"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344Z"></path></svg>
-						</button>
-					</div>
-				</div>
-			</li>
-		`)		
+		renderit("cardItems", `${loadCardHTML0(cardArray, priceRounded, index) + loadCardHTML1(index, cardArray)}`)		
 	}
+}
+
+function loadCardHTML0(cardArray, priceRounded, index) {
+	return `<li id="">
+			<h4>${cardArray[index].times}</h4>
+			<div style="margin-bottom: 8px;">
+			<h3>${cardArray[index].name}</h3>
+			<span>${priceRounded} €</span>
+			</div>
+			<div>
+			<strong>Anmerkung hinzufügen</strong>
+			<div>`
+}
+
+function loadCardHTML1(index, cardArray) {
+	return `<button onclick="removeFromCard(${index})">
+			<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--minus" width="24" height="24"><path d="M14.125 7.344H1.875v1.312h12.25V7.344Z"></path></svg>							
+			</button>
+			<span>${cardArray[index].times}</span>
+			<button onclick="addToCard(${cardArray[index].category +`,`+ cardArray[index].ID})">
+			<svg xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill="currentColor" viewBox="0 0 16 16" class="c-pieIcon c-pieIcon--plus" width="24" height="24"><path d="M14.125 7.344H8.656V1.875H7.344v5.469H1.875v1.312h5.469v5.469h1.312V8.656h5.469V7.344Z"></path></svg>
+			</button>
+			</div>
+			</div>
+			</li>`
 }
 
 function addChangeDB(category, cardItem) {
@@ -177,14 +208,12 @@ function addToCard(category, itemID) {
 		loadCard()
 		PriceCalculator()
 	}
-}	
+}
 
 function removeFromCard(ItemID) {
 	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
 	if (cardArray[ItemID].times === 1) {
-		lol = ItemID + 1
 		cardArray.splice(ItemID, 1)
-		console.log(cardArray)
 		addChangeDB("card", cardArray)
 		loadCard()
 		PriceCalculator()
@@ -196,80 +225,156 @@ function removeFromCard(ItemID) {
 	}
 }
 
-
 function PriceCalculator() {
 	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
-	let subtotal = null
+	let subtotal
+
 	for (let index = 1; index < cardArray.length; index++) {
 		PriceCache = cardArray[index].price * cardArray[index].times		
 		if (subtotal == null) {
 			subtotal = PriceCache
+			cardArray[0].subtotal = subtotal
+			if (subtotal !== 0 || subtotal !== null || subtotal !== undefined) {
+				cardArray[0].total = subtotal + 2
+			}
 		} else if (PriceCache !== subtotal) {
 			subtotal = PriceCache + subtotal	
 			cardArray[0].subtotal = subtotal
+			cardArray[0].total = subtotal + 2
 		}
 	}
+
+	checkForEmptyCard(cardArray)
 	addChangeDB("card", cardArray)
 	loadCardPrice(subtotal)
 }
 
-let price
-
-function loadCardPrice(subtotal) {
-	subtotalRoundet = subtotal.toFixed(2)
-	total = Number(subtotalRoundet) + 2
-	if (forPickup === "pickup") {
-		renderOverwrite(billingArea,`
-			<span>
-				<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
-				<div><strong>Gesamt</strong><strong>${subtotalRoundet} €</strong></div>
-			</span>
-			<button id="payNonMoba" onclick="invoceIt(payNonMoba,${subtotalRoundet})">Bezahlen (<h1 id="totalAmount">${subtotalRoundet} €</h1>)</button>
-			<button id="payMoba" onclick="invoceIt(payMoba,${subtotalRoundet})">Warenkorb (<h1 id="totalAmount">${subtotalRoundet} €</h1>)</button>
-		`)
-		price = subtotalRoundet
-	} else {
-		renderOverwrite(billingArea,`
-			<span>
-				<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
-				<div><span>Lieferkosten</span><span>2,00 €</span></div>
-				<div><strong>Gesamt</strong><strong>${total.toFixed(2)} €</strong></div>
-			</span>	
-			<button id="payNonMoba" onclick="invoceIt(payNonMoba)">Bezahlen (<h1 id="totalAmount">${total.toFixed(2)} €</h1>)</button>
-			<button id="payMoba" onclick="invoceIt(payMoba)">Warenkorb (<h1 id="totalAmount">${total.toFixed(2)} €</h1>)</button>
-		`)
-		price = total.toFixed(2)
+function checkForEmptyCard(cardArray) {
+	if (!cardArray[1]) {
+		cardArray[0].total = 0 
+		cardArray[0].subtotal = 0
+		addChangeDB("card", cardArray)
 	}
 }
 
+let price = 0.00
+
+function loadCardPrice(subtotal) {
+	let payOrCard = undefined
+	if (cartFullscreen) {
+		payOrCard = "Bezahlen"
+	} else {
+		payOrCard = "Warenkorb"
+	}
+	if (subtotal == null) {
+		renderOverwrite(billingArea,`${loadCardPriceHTML1(payOrCard)}`)
+	} else {
+		subtotalRoundet = subtotal.toFixed(2)
+		total = Number(subtotalRoundet) + 2
+		if (forPickup === "pickup") {
+			renderOverwrite(billingArea,`${loadCardPriceHTML0(subtotalRoundet, payOrCard)}`)
+			price = subtotalRoundet
+		} else {
+			renderOverwrite(billingArea,`${loadCardPriceHTML2(subtotalRoundet, total, payOrCard)}`)
+			price = total.toFixed(2)
+		}
+	}
+}
+
+function loadCardPriceHTML0(subtotalRoundet, payOrCard) {
+	return `<span>
+			<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
+			<div><strong>Gesamt</strong><strong>${subtotalRoundet} €</strong></div>
+			</span>
+			<button id="payNonMoba" onclick="invoceIt(payNonMoba,${subtotalRoundet})">Bezahlen (<h1 id="totalAmount">${subtotalRoundet} €</h1>)</button>
+			<button id="payMoba" onclick="invoceIt(payMoba,${subtotalRoundet})">${payOrCard} (<h1 id="totalAmount">${subtotalRoundet} €</h1>)</button>
+			`
+}
+
+function loadCardPriceHTML1(payOrCard) {
+	return `<span>
+			<div><span>Zwischensumme</span><span>00,00 €</span></div>
+			<div><span>Lieferkosten</span><span>2,00 €</span></div>
+			<div><strong>Gesamt</strong><strong>00,00 €</strong></div>
+			</span>	
+			<button id="payNonMoba" onclick="invoceIt(payNonMoba)">Bezahlen (<h1 id="totalAmount">00,00 €</h1>)</button>
+			<button id="payMoba" onclick="invoceIt(payMoba)">${payOrCard} (<h1 id="totalAmount">00,00 €</h1>)</button>
+		`
+}
+
+function loadCardPriceHTML2(subtotalRoundet, total, payOrCard) {
+	return `<span>
+			<div><span>Zwischensumme</span><span>${subtotalRoundet} €</span></div>
+			<div><span>Lieferkosten</span><span>2,00 €</span></div>
+			<div><strong>Gesamt</strong><strong>${total.toFixed(2)} €</strong></div>
+			</span>	
+			<button id="payNonMoba" onclick="invoceIt(payNonMoba)">Bezahlen (<h1 id="totalAmount">${total.toFixed(2)} €</h1>)</button>
+			<button id="payMoba" onclick="invoceIt(payMoba)">${payOrCard} (<h1 id="totalAmount">${total.toFixed(2)} €</h1>)</button>
+			`
+}
+
+let cartFullscreen = false
+
 function invoceIt(diviceType) {
 	if (diviceType.id === "payNonMoba") {
+		cartFullscreen = false
 		document.getElementById("fullscreen").style = "display: flex;"
+		document.getElementById("body").style = "overflow-y: hidden;"
+		emptyCard()
 	} else {
 		document.getElementById("card").classList = "cart cartFullscreen"
-		document.getElementById("payMoba").innerHTML = "Bezahlen" + " (" + price + ") €"
+		document.getElementById("payMoba").innerHTML = "Bezahlen" + " (" + "<h1 id="+"totalAmount"+">" + price + " €</h1> )"
 		document.getElementById("body").style = "overflow-y: hidden;"
 		document.getElementById("cardItems").style = "max-height: 75%;"
 		document.getElementById("cardheadingmoba").style = "display: flex;"
+		if (cartFullscreen) {
+			emptyCard()
+			price = 0
+			document.getElementById("fullscreen").style = "display: flex;"
+			document.getElementById("body").style = "overflow-y: hidden;"
+		}
+		cartFullscreen = true
 	}
 }
 
 function closeCartFullscreen() {
+	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
 	document.getElementById("card").classList = "cart"
 	document.getElementById("body").style = "overflow-y: scroll;"
 	document.getElementById("cardItems").style ="max-height: calc(100% - 342px);"
 	document.getElementById("cardheadingmoba").style = ""
-	document.getElementById("payMoba").innerHTML = "Warenkorb" + " (" + price + ") €"
+	if (cardArray[0].delivery === true) {
+		document.getElementById("payMoba").innerHTML = "Warenkorb" + " (" + "<h1 id="+"totalAmount"+">" + cardArray[0].total.toFixed(2) + " €</h1> )"
+	} else {
+		document.getElementById("payMoba").innerHTML = "Warenkorb" + " (" + "<h1 id="+"totalAmount"+">" + cardArray[0].subtotal.toFixed(2) + " €</h1> )"
+	}
+	cartFullscreen = false
+	PriceCalculator()
 }
 
 function closefullscreen() {
 	document.getElementById("fullscreen").style = "display: none;"
+	document.getElementById("body").style = "overflow-y: scroll;"
+}
+
+function emptyCard() {
+	let cardArray = JSON.parse(localStorage.getItem("card") || "[]");
+	document.getElementById("cardItems").innerHTML = ""
+	cardArray = [
+		{
+			"subtotal": 0.00,
+			"deliveryCosts": 2.00,
+			"total": 0.00,
+			"delivery": true
+		}
+	]
+	addChangeDB("card", cardArray)
+	loadCardPrice(null)
 }
 
 let lastItem
 
 function clickt(item, scrollTo) {
-	console.log(lastItem)
 	if (lastItem) {
 		document.getElementById(lastItem).classList = ""
 	} 
@@ -290,15 +395,19 @@ function skipFor() {
 let forPickup
 
 function minecraftLever(whichCase) {
+	const cardArray = JSON.parse(localStorage.getItem("card") || "[]");
 	deliveryBnt = document.getElementById("delivery")
 	pickupBnt = document.getElementById("pickup")
 	if (whichCase.id === "delivery") {
 		deliveryBnt.classList = "active"
 		pickupBnt.classList.remove("active")
+		cardArray[0].delivery = true
 	} else {
 		pickupBnt.classList = "active"
 		deliveryBnt.classList.remove("active")
+		cardArray[0].delivery = false
 	}
 	forPickup = whichCase.id
+	addChangeDB("card", cardArray)
 	PriceCalculator()
 }

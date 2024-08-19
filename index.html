@@ -107,11 +107,13 @@
 				<ul id="cardItems"></ul>
 				  
 				<div id="billingArea">
-					<div><span>Zwischensumme</span><span>48,00 €</span></div>
-					<div><span>Lieferkosten</span><span>2,00 €</span></div>
-					<div><strong>Gesamt</strong><strong>50,00 €</strong></div>
-					<button id="payNonMoba">Bezahlen (<h1 id="totalAmount"></h1>)</button>
-					<button id="payMoba">Warenkorb (<h1 id="totalAmount"></h1>)</button>
+					<span>
+						<div><span>Zwischensumme</span><span>00,00 €</span></div>
+						<div><span>Lieferkosten</span><span>2,00 €</span></div>
+						<div><strong>Gesamt</strong><strong>00,00 €</strong></div>
+					</span>	
+					<button id="payNonMoba" onclick="invoceIt(payNonMoba)">Bezahlen (<h1 id="totalAmount">00,00 €</h1>)</button>
+					<button id="payMoba" onclick="invoceIt(payMoba)">Warenkorb (<h1 id="totalAmount">00,00 €</h1>)</button>
 				</div>
 			</aside>
 			<div id="fullscreen" style="display: none;">
@@ -121,5 +123,19 @@
 				</span>
 			</div>
 		</section>
+		<footer id="footer">
+			<div>
+				<a>Ein Restaurant empfehlen</a>
+				<a>Ein Restaurant anmelden</a>
+				<a>Jobs</a>
+				<a>AGB</a>
+				<a>Datenschutzerklärung</a>
+				<a>Impressum</a>
+				<a>Verwendung von Cookies</a>
+				<a>Bug Bounty</a>
+				<a>Ethik-Hotline</a>
+			</div>
+			<span>© 2024 No One Page is For educational purposes only</span>
+		</footer>
 </body>
 </html>

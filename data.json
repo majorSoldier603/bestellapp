@@ -896,18 +896,10 @@
 	],
 	"card": [
 		{
-			"subtotal": "96.90",
-			"deliveryCosts": "2.00",
-			"total": "98.90"
-		},
-		{
-			"name": "Brezza Umbria Rose 0,75l",
-			"description": "",
-			"price": 11.90,
-			"times": 5,
-			"category": 13,
-			"ID":  14,
-			"uniqueID": 1314
+			"subtotal": 0.00,
+			"deliveryCosts": 2.00,
+			"total": 0.00,
+			"delivery": true
 		}
 	]
 }	
